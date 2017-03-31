@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+    ©2017 Manasés Jesús
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link rel="stylesheet" href="f7/css/framework7.ios.min.css">
+        <link rel="stylesheet" href="f7/css/framework7.ios.colors.min.css">
+        <link rel="stylesheet" href="f7/kitchen-sink-ios/css/framework7-icons.css">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <title>climAR</title>
+    </head>
+    <body>
+        <!-- div class="statusbar-overlay"></div -->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <div class="pages navbar-through toolbar-through">
+                    <div data-page="floating-button" class="page page-on-center">
+                        <div id="location">
+                            <i style="font-size: 16px" class="icon f7-icons">flag</i> Fulda
+                        </div>
+                        <div class="speed-dial">
+                            <a href="#" class="floating-button"><i class="icon f7-icons">gear</i><i class="icon f7-icons">close</i></a>
+                            <div class="speed-dial-buttons">
+                                <a id="wind" href="#"><i style="font-size: 20px" class="icon f7-icons">login</i></a>
+                                <a id="pressure" href="#"><i style="font-size: 20px" class="icon f7-icons">sort</i></a>
+                                <a id="temp" href="#"><i style="font-size: 17px" class="icon f7-icons">ºC</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- div class="app">
+            <h1>climAR</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="f7/js/framework7.min.js"></script>
+
+
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
