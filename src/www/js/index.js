@@ -17,8 +17,6 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        var location = ""
-
         /*ezar.initializeVideoOverlay(
             function() {
                 ezar.getBackCamera().start();
@@ -45,6 +43,22 @@ var app = {
         } else {
             alert("Geolocation is not supported on your device");
         }
+
+        /******* Bind touch events *******/
+        $$("#temp").click(function () {
+            $$(this).toggleClass("fahrenheit");
+            app.calculateTemperature($$(this).hasClass("fahrenheit"));
+        });
+
+        $$("#pressure").click(function () {
+            $$(this).toggleClass("fill");
+            app.showPressure($$(this).hasClass("fill"));
+        });
+
+        $$("#wind").click(function () {
+            $$(this).toggleClass("fill");
+            app.showWind($$(this).hasClass("fill"));
+        });
     },
 
     // Update DOM on a Received Event
@@ -60,6 +74,33 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');*/
 
         console.log('Received Event: ' + id);
+    },
+
+    calculateTemperature: function (is_fahrenheit) {
+        if (is_fahrenheit) {
+            $$("#temp i").text("ºF");
+        }
+        else {
+            $$("#temp i").text("ºC");
+        }
+    },
+
+    showPressure: function (show_it) {
+        if (show_it) {
+            $$("#pressure i").text("sort_fill");
+        }
+        else {
+            $$("#pressure i").text("sort");
+        }
+    },
+
+    showWind: function (show_it) {
+        if (show_it) {
+            $$("#wind i").text("login_fill");
+        }
+        else {
+            $$("#wind i").text("login");
+        }
     }
 };
 
