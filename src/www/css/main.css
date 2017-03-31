@@ -20,10 +20,10 @@ body {
 }
 
 #location {
-    color: white;
-    font-size: 14px;
-    margin-left: 15px;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: white;
+    margin-left: 15px;
     bottom: 15px;
     position: absolute;
 }
@@ -42,6 +42,10 @@ body {
 
 .pages, .page {
     background-color: darkred;
+}
+
+.fill i {
+    font-size: 20px;
 }
 
 
