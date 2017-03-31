@@ -32,6 +32,7 @@
     <preference name="fullscreen" value="true" />
     <plugin name="com.ezartech.ezar.snapshot" spec="../../../plugins/ezar-startup-kit-0.2.10/plugins/com.ezartech.ezar.snapshot" />
     <plugin name="com.ezartech.ezar.videooverlay" spec="../../../plugins/ezar-startup-kit-0.2.10/plugins/com.ezartech.ezar.videooverlay" />
+    <!-- plugin name="cordova-plugin-nativegeocoder" spec="plugins/cordova-plugin-nativegeocoder" / -->
     <engine name="ios" spec="~4.3.1" />
     <engine name="android" spec="~6.1.2" />
     <plugin name="cordova-custom-config" spec="~3.1.2" />
