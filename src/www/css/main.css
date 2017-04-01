@@ -23,11 +23,15 @@ body {
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: white;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.7);
     margin-left: 15px;
     bottom: 15px;
     position: absolute;
 }
-
+#location.black {
+    color: #000;
+    text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.7);
+}
 
 .pages, .page,
 .floating-button, .floating-button.active-state,
