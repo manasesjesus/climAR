@@ -24,13 +24,23 @@ var app = {
             function(error) {
                 alert("Camera initialization failed");
             }
-        ); */
+        );*/
+
+        // Initialize app
+        var myApp = new Framework7();
 
         if (navigator.geolocation) {
             // Get location
             navigator.geolocation.getCurrentPosition(
                 function (position) {        // onSuccess
-                    $$("#location span").text(position.coords.latitude + ", " + position.coords.longitude);
+                    nativegeocoder.reverseGeocode(
+                        function (result) {
+                            $$("#location span").text(result.city + ", " + result.countryCode);
+                        },
+                        function (err) {
+                            $$("#location span").text("Ooops! Can't get the location...");
+                        },
+                        position.coords.latitude, position.coords.longitude);
                 },
                 function (error) {           // onError
                     console.log('code: '    + error.code    + '\n' + 'message: ' + error.message);
@@ -59,12 +69,15 @@ var app = {
             $$(this).toggleClass("fill");
             app.showWind($$(this).hasClass("fill"));
         });
+
+        $$("#location").click(function () {
+            $$(this).toggleClass("black");
+        });
     },
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        // Initialize app
-        var myApp = new Framework7();
+
 
         /*var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -87,10 +100,10 @@ var app = {
 
     showPressure: function (show_it) {
         if (show_it) {
-            $$("#pressure i").text("sort_fill");
+            $$("#pressure i").text("money_rubl_fill");
         }
         else {
-            $$("#pressure i").text("sort");
+            $$("#pressure i").text("money_rubl");
         }
     },
 
