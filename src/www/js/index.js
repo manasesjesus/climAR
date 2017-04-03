@@ -2,7 +2,7 @@
  * ©2017 Manasés Jesús
  */
 
-var $$ = Dom7;
+var dom7 = Dom7;
 
 var app = {
     // Application Constructor
@@ -35,10 +35,10 @@ var app = {
                 function (position) {        // onSuccess
                     nativegeocoder.reverseGeocode(
                         function (result) {
-                            $$("#location span").text(result.city + ", " + result.countryCode);
+                            dom7("#location span").text(result.city + ", " + result.countryCode);
                         },
                         function (err) {
-                            $$("#location span").text("Ooops! Can't get the location...");
+                            dom7("#location span").text("Ooops! Can't get the location...");
                         },
                         position.coords.latitude, position.coords.longitude);
                 },
@@ -55,23 +55,23 @@ var app = {
         }
 
         /******* Bind touch events *******/
-        $$("#temp").click(function () {
-            $$(this).toggleClass("fahrenheit");
-            app.calculateTemperature($$(this).hasClass("fahrenheit"));
+        dom7("#temp").click(function () {
+            dom7(this).toggleClass("fahrenheit");
+            app.calculateTemperature(dom7(this).hasClass("fahrenheit"));
         });
 
-        $$("#pressure").click(function () {
-            $$(this).toggleClass("fill");
-            app.showPressure($$(this).hasClass("fill"));
+        dom7("#pressure").click(function () {
+            dom7(this).toggleClass("fill");
+            app.showPressure(dom7(this).hasClass("fill"));
         });
 
-        $$("#wind").click(function () {
-            $$(this).toggleClass("fill");
-            app.showWind($$(this).hasClass("fill"));
+        dom7("#wind").click(function () {
+            dom7(this).toggleClass("fill");
+            app.showWind(dom7(this).hasClass("fill"));
         });
 
-        $$("#location").click(function () {
-            $$(this).toggleClass("black");
+        dom7("#location").click(function () {
+            dom7("#location").toggleClass("black");
         });
     },
 
@@ -91,28 +91,28 @@ var app = {
 
     calculateTemperature: function (is_fahrenheit) {
         if (is_fahrenheit) {
-            $$("#temp i").text("ºF");
+            dom7("#temp i").html("&deg;F");
         }
         else {
-            $$("#temp i").text("ºC");
+            dom7("#temp i").html("&deg;C");
         }
     },
 
     showPressure: function (show_it) {
         if (show_it) {
-            $$("#pressure i").text("money_rubl_fill");
+            dom7("#pressure i").text("money_rubl_fill");
         }
         else {
-            $$("#pressure i").text("money_rubl");
+            dom7("#pressure i").text("money_rubl");
         }
     },
 
     showWind: function (show_it) {
         if (show_it) {
-            $$("#wind i").text("login_fill");
+            dom7("#wind i").text("login_fill");
         }
         else {
-            $$("#wind i").text("login");
+            dom7("#wind i").text("login");
         }
     }
 };
