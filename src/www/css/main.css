@@ -22,15 +22,31 @@ body {
 #location {
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 14px;
+    text-shadow: 0px -1px 3px rgba(0, 0, 0, 0.7);
     color: white;
-    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.7);
     margin-left: 15px;
     bottom: 15px;
     position: absolute;
 }
-#location.black {
-    color: #000;
-    text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.7);
+
+#temp i {
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+#weather_details {
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    text-shadow: 0px -1px 3px rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 70px;
+    min-height: 70px;
+    margin: 15px;
+    background-color: black;
+}
+
+.black {
+    color: #000 !important;
+    text-shadow: 1px 0px 3px rgba(255, 255, 255, 0.5) !important;
 }
 
 .pages, .page,
@@ -44,13 +60,13 @@ body {
     right: 5px;
 }
 
-.pages, .page {
-    background-color: darkred;
-}
-
 .fill i {
     font-size: 20px;
 }
+
+
+
+
 
 
 
