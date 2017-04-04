@@ -13,7 +13,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <!-- meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"-->
         <!-- meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;" -->
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="f7/css/framework7.ios.min.css">
         <link rel="stylesheet" href="f7/css/framework7.ios.colors.min.css">
         <link rel="stylesheet" href="f7/kitchen-sink-ios/css/framework7-icons.css">
-
+        <link rel="stylesheet" href="simpleWeather/simpleWeather.css">
         <link rel="stylesheet" href="css/main.css">
 
         <title>climAR</title>
@@ -34,18 +34,17 @@
             <div class="view view-main">
                 <div class="pages navbar-through toolbar-through">
                     <div data-page="climAR" class="page page-on-center">
-                        <div id="weather_details">
-                            <div>32</div><div>ºC</div>
-                        </div>
+                        <div id="weather_details">...</div>
                         <div id="location">
                             <i style="font-size: 18px" class="icon f7-icons">navigation</i> <span>...</span>
                         </div>
                         <div class="speed-dial">
                             <a href="#" class="floating-button"><i class="icon f7-icons">gear</i><i class="icon f7-icons">close</i></a>
                             <div class="speed-dial-buttons">
-                                <a id="wind" class="fill" href="#"><i class="icon f7-icons">login_fill</i></a>
+                                <a id="humidity" class="fill" href="#"><i class="weather icon-humidity"></i></a>
+                                <a id="wind" class="fill" href="#"><i class="weather icon-wind"></i></a>
                                 <a id="pressure" class="fill" href="#"><i class="icon f7-icons">money_rubl_fill</i></a>
-                                <a id="temp" href="#"><i class="icon f7-icons">&deg;C</i></a>
+                                <a id="temp" href="#"><i class="icon f7-icons">reload</i></a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +62,8 @@
         </div -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="f7/js/framework7.min.js"></script>
-
+        <script src="simpleWeather/jquery.min.js"></script>
+        <script src="simpleWeather/simpleWeather.min.js"></script>
 
         <script type="text/javascript" src="js/index.js"></script>
     </body>

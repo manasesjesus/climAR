@@ -11,6 +11,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: transparent;
+    line-height: 1;
     /*
         height: 100%;
         width:  100%;
@@ -22,7 +23,7 @@ body {
 #location {
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 14px;
-    text-shadow: 0px -1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.7);
     color: white;
     margin-left: 15px;
     bottom: 15px;
@@ -30,18 +31,42 @@ body {
 }
 
 #temp i {
-    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#temp i.spin {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 #weather_details {
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    text-shadow: 0px -1px 3px rgba(0, 0, 0, 0.7);
+    text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 20px;
     color: white;
-    width: 70px;
-    min-height: 70px;
-    margin: 15px;
-    background-color: black;
+    width: 150px;
+    position: absolute;
+    left: 15px;
+    top: -10px;
+}
+
+#weather_details i {
+    font-family: 'weather';
+    font-size: 60px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.0;
+    text-transform: none;
+}
+
+#weather_details sub {
+    display: block;
+    font-size: 7px;
+}
+
+#weather_details sup {
+    font-size: 9px;
 }
 
 .black {
@@ -61,9 +86,12 @@ body {
 }
 
 .fill i {
-    font-size: 20px;
+    color: lightblue;
 }
 
+.weather {
+    font-family: 'weather';
+}
 
 
 
