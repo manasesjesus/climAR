@@ -19,14 +19,14 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        /*ezar.initializeVideoOverlay(
+        ezar.initializeVideoOverlay(
             function() {
                 ezar.getBackCamera().start();
             },
             function(error) {
                 alert("Camera initialization failed");
             }
-        );*/
+        );
 
         // Initialize app
         var myApp = new Framework7();
@@ -41,7 +41,7 @@ var app = {
                             dom7("#location span").text(result.city + ", " + result.countryCode);
                         },
                         function (err) {
-                            dom7("#location span").text("Ooops! Can't get city name...");
+                            dom7("#location span").text("Ooops! Unknown location...");
                         },
                         position.coords.latitude, position.coords.longitude);
 
@@ -108,25 +108,8 @@ var app = {
             alert("Geolocation is not supported on your device");
         }
 
-        //// borrar
-        /*
-        $.simpleWeather({
-            location: "Santiago Pinotepa Nacional, Oaxaca, Mexico",
-            woeid: '',
-            unit: 'c',
-            success: function (weather) {
-                tinc = '<i class="icon-' + weather.code + '"></i>' +
-                    '<div>' + weather.temp + '<sup>&deg;' + weather.units.temp + '</sup></div>';
-                dom7("#weather_details").html(tinc);
-            },
-            error: function (error) {
-                console.log("Weather error: " + error);
-            }
-        }); */
-        /// borrar
 
-
-        /******* Bind touch events *******/
+        /******* Touch events *******/
         dom7("#temp").click(function () {
             dom7(this).toggleClass("fahrenheit");
             app.displayTemperature(dom7(this).hasClass("fahrenheit"));
@@ -149,6 +132,14 @@ var app = {
 
         dom7("#location, #weather_details").click(function () {
             dom7("#location, #weather_details").toggleClass("black");
+        });
+
+        dom7("#camera_shutter div").mousedown(function () {
+            dom7(this).addClass("pressed");
+        }).mouseup(function () {
+            dom7(this).removeClass("pressed");
+        }).click(function () {
+            
         });
     },
 
