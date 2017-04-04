@@ -5,16 +5,6 @@
     font-style: normal;
 }
 
-.weather-icon {
-    color: #fff;
-    font-family: weather;
-    font-size: 150px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.0;
-    text-transform: none;
-}
-
 .icon-0:before { content: ":"; }
 .icon-1:before { content: "p"; }
 .icon-2:before { content: "S"; }
@@ -63,4 +53,12 @@
 .icon-45:before { content: "S"; }
 .icon-46:before { content: "U"; }
 .icon-47:before { content: "S"; }
-∫
+
+.icon-wind:before {
+    content: "E";
+    font-size: 35px;
+}
+.icon-humidity:before {
+    content: "5";
+    font-size: 55px;
+}
