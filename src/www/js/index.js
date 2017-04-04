@@ -19,14 +19,14 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        ezar.initializeVideoOverlay(
+        /*ezar.initializeVideoOverlay(
             function() {
                 ezar.getBackCamera().start();
             },
             function(error) {
                 alert("Camera initialization failed");
             }
-        );
+        );*/
 
         // Initialize app
         var myApp = new Framework7();
@@ -55,8 +55,8 @@ var app = {
                                     '<div><sub>' + weather.currently + '</sub>' + weather.temp +
                                     '<sup> &deg;' + weather.units.temp + '</sup>' +
 
-                                    '<span id="pressure_data"><sub><br>Pressure</sub>' + weather.pressure +
-                                    '<sup> inHg</sup></span>' +
+                                    '<span id="pressure_data"><sub><br>Pressure</sub>' +
+                                     parseInt("" + weather.pressure) + '<sup> inHg</sup></span>' +
 
                                     '<span id="wind_data"><sub><br>Wind Speed</sub>' + weather.wind.speed +
                                         '<sup> ' + weather.units.speed + '</sup></span>' +
@@ -80,8 +80,8 @@ var app = {
                                 '<div><sub>' + weather.currently + '</sub>' + weather.temp +
                                 '<sup> &deg;' + weather.units.temp + '</sup>' +
 
-                                '<span id="pressure_data"><sub><br>Pressure</sub>' + weather.pressure +
-                                '<sup> mBar</sup></span>' +
+                                '<span id="pressure_data"><sub><br>Pressure</sub>' +
+                                parseInt("" + weather.pressure) + '<sup> mBar</sup></span>' +
 
                                 '<span id="wind_data"><sub><br>Wind Speed</sub>' + weather.wind.speed +
                                 '<sup> ' + weather.units.speed + '</sup></span>' +
