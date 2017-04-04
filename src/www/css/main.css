@@ -69,6 +69,23 @@ body {
     font-size: 9px;
 }
 
+#camera_shutter {
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+}
+#camera_shutter div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgb(230,230,230);
+    background-color: rgba(255,255,255,0.7);
+    margin: 0 auto;
+}
+#camera_shutter div.pressed {
+    background-color: white;
+}
+
 .black {
     color: #000 !important;
     text-shadow: 1px 0px 3px rgba(255, 255, 255, 0.5) !important;
@@ -93,7 +110,9 @@ body {
     font-family: 'weather';
 }
 
-
+.pages {
+    background-color: lightcoral;
+}
 
 
 
