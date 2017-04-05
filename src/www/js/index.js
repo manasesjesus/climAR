@@ -134,12 +134,23 @@ var app = {
             dom7("#location, #weather_details").toggleClass("black");
         });
 
-        dom7("#camera_shutter div").mousedown(function () {
+        dom7("#camera_shutter div").touchstart(function () {
             dom7(this).addClass("pressed");
-        }).mouseup(function () {
+        }).touchend(function () {
             dom7(this).removeClass("pressed");
         }).click(function () {
-            
+            dom7("#camera_shutter div, .speed-dial").hide();
+            setTimeout(function () {
+                ezar.snapshot(
+                    function () {
+                        dom7("#camera_shutter div, .speed-dial").show();
+                    },
+                    function (err) {
+                        dom7("#camera_shutter div, .speed-dial").show();
+                    },
+                    { "saveToPhotoAlbum": true }
+                );
+            }, 10);
         });
     },
 
