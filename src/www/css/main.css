@@ -69,6 +69,28 @@ body {
     font-size: 9px;
 }
 
+#camera_switch {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#camera_switch.selfie {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#rain_switch {
+    color: white;
+    position: absolute;
+    right: 55px;
+    top: 0px;
+}
+
+
+
 #camera_shutter {
     width: 100%;
     position: absolute;
@@ -79,7 +101,7 @@ body {
     height: 50px;
     border-radius: 50%;
     border: 5px solid rgb(230,230,230);
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
     margin: 0 auto;
 }
 #camera_shutter div.pressed {
@@ -111,24 +133,32 @@ body {
 }
 
 .pages {
-    background-color: lightcoral;
+
+}
+
+/* Rain effect */
+#rain {
+    display: none;
+}
+
+.drop {
+    background: -webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6)));
+    width: 1px;
+    height: 89px;
+    position: absolute;
+    bottom: 200px;
+    -webkit-animation: fall .63s linear infinite;
+    animation: fall .63s linear infinite;
+}
+
+@-webkit-keyframes fall {
+    to { margin-top: 900px; }
+}
+@keyframes fall {
+    to { margin-top:900px; }
 }
 
 
-
-
-/* Portrait layout (default) */
-.app {
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:325px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
