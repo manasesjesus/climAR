@@ -62,3 +62,7 @@
     content: "5";
     font-size: 55px;
 }
+.icon-rain:before {
+    content: "M";
+    font-size: 40px;
+}
