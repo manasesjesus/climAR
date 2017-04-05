@@ -134,19 +134,37 @@ var app = {
             dom7("#location, #weather_details").toggleClass("black");
         });
 
+        dom7("#rain_switch").click(function () {
+            if (dom7("#rain").children().length == 0) {
+                dom7("#rain").show();
+                createRain(700);
+            }
+            else {
+                dom7("#rain").html("").hide();
+            }
+        });
+
+        dom7("#camera_switch").click(function () {
+            dom7(this).toggleClass("selfie");
+            var newCamera = ezar.getActiveCamera().getPosition() == 'BACK' ?
+                                ezar.getFrontCamera() : ezar.getBackCamera();
+            newCamera.start();
+        });
+
         dom7("#camera_shutter div").touchstart(function () {
             dom7(this).addClass("pressed");
         }).touchend(function () {
             dom7(this).removeClass("pressed");
         }).click(function () {
-            dom7("#camera_shutter div, .speed-dial").hide();
+            var elements = "#camera_shutter div, #camera_switch, #rain_switch, .speed-dial";
+            dom7(elements).hide();
             setTimeout(function () {
                 ezar.snapshot(
                     function () {
-                        dom7("#camera_shutter div, .speed-dial").show();
+                        dom7(elements).show();
                     },
                     function (err) {
-                        dom7("#camera_shutter div, .speed-dial").show();
+                        dom7(elements).show();
                     },
                     { "saveToPhotoAlbum": true }
                 );
@@ -156,15 +174,6 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-
-
-        /*var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');*/
-
         console.log('Received Event: ' + id);
     },
 
@@ -213,3 +222,16 @@ var app = {
 
 app.initialize();
 
+
+/******* Simple rain effect *******/
+function randRange (minNum, maxNum) {
+    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+
+function createRain (drops) {
+    for (var i=1; i<drops; i++) {
+        $("#rain").append('<div class="drop" id="drop' + i + '"></div>');
+        $("#drop" + i).css('left', randRange(0, 1600));
+        $("#drop" + i).css('top', randRange(-1000, 1400));
+    }
+}
