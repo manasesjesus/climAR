@@ -156,15 +156,18 @@ var app = {
         }).touchend(function () {
             dom7(this).removeClass("pressed");
         }).click(function () {
-            var elements = "#camera_shutter div, #camera_switch, #rain_switch, .speed-dial";
+            var elements = "#camera_switch, #rain_switch, .speed-dial";
             dom7(elements).hide();
+            dom7("#camera_shutter div").css("opacity", "0");
             setTimeout(function () {
                 ezar.snapshot(
                     function () {
                         dom7(elements).show();
+                        dom7("#camera_shutter div").css("opacity", "1");
                     },
                     function (err) {
                         dom7(elements).show();
+                        dom7("#camera_shutter div").css("opacity", "1");
                     },
                     { "saveToPhotoAlbum": true }
                 );
