@@ -12,12 +12,6 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: transparent;
     line-height: 1;
-    /*
-        height: 100%;
-        width:  100%;
-        margin:  0px;
-        padding: 0px;
-    */
 }
 
 #location {
@@ -149,9 +143,8 @@ body {
     to { margin-top: 900px; }
 }
 @keyframes fall {
-    to { margin-top:900px; }
+    to { margin-top: 900px; }
 }
-
 
 
 /* Landscape layout (with min-width) */
@@ -177,5 +170,3 @@ body {
         height: 100%;
     }
 }
-
-
