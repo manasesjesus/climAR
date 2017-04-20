@@ -29,7 +29,7 @@ the users’ needs and wishes.
     augmented reality
 - It uses **[Yahoo Weather API](https://developer.yahoo.com/weather/)** 
     to get up-to-date weather information
-- It is the best augmented realty weather app, ever. 
+- It is the most advanced augmented realty weather app, ever. 
 
 
 ### Install
